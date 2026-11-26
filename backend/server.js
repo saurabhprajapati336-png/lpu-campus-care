@@ -11,10 +11,38 @@ const complaintRoutes = require("./routes/complaintRoutes");
 
 const app = express();
 
+// Allowed frontend origins
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://lpu-campus-care-3jwwle2th-saurabh-66a6.vercel.app",
+    "https://lpu-campus-care.vercel.app"
+];
+
 // CORS Configuration
 app.use(cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    origin: function (origin, callback) {
+        // Allow requests without origin (Postman, server-to-server)
+        if (!origin) {
+            return callback(null, true);
+        }
+
+        // Allow listed origins
+        if (allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+
+        // Allow other Vercel preview deployments for this project
+        if (
+            origin.startsWith("https://lpu-campus-care-") &&
+            origin.endsWith("-saurabh-66a6.vercel.app")
+        ) {
+            return callback(null, true);
+        }
+
+        return callback(new Error("Not allowed by CORS"));
+    },
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
 }));
 
@@ -54,7 +82,7 @@ app.use((req, res) => {
 
 // Global Error Handler
 app.use((err, req, res, next) => {
-    console.error("Server Error:", err);
+    console.error("Server Error:", err.message);
 
     res.status(500).json({
         success: false,
