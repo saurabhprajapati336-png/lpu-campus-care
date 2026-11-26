@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import "./MyProfile.css";
 
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "https://lpu-campus-care.onrender.com/api/auth";
 
 function MyProfile() {
   const [profile, setProfile] = useState({
@@ -315,3 +315,4 @@ function MyProfile() {
 }
 
 export default MyProfile;
+

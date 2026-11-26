@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./AdminProfile.css";
 
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "https://lpu-campus-care.onrender.com/api/auth";
 
 function AdminProfile() {
   const navigate = useNavigate();
@@ -391,3 +391,4 @@ function AdminProfile() {
 }
 
 export default AdminProfile;
+

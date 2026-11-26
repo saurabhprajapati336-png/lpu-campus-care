@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./MyComplaints.css";
 
-const API_URL = "http://localhost:5000/api/complaints";
+const API_URL = "https://lpu-campus-care.onrender.com/api/complaints";
 
 function MyComplaints() {
   const [complaints, setComplaints] = useState([]);
@@ -241,3 +241,4 @@ function MyComplaints() {
 }
 
 export default MyComplaints;
+

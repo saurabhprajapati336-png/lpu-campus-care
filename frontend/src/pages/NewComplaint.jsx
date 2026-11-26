@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./NewComplaint.css";
 
-const API_URL = "http://localhost:5000/api/complaints";
+const API_URL = "https://lpu-campus-care.onrender.com/api/complaints";
 
 function NewComplaint() {
   const navigate = useNavigate();
@@ -252,3 +252,4 @@ function NewComplaint() {
 }
 
 export default NewComplaint;
+

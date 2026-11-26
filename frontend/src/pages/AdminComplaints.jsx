@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./AdminComplaints.css";
 
-const API_URL = "http://localhost:5000/api/complaints";
+const API_URL = "https://lpu-campus-care.onrender.com/api/complaints";
 
 function AdminComplaints() {
   const navigate = useNavigate();
@@ -369,3 +369,4 @@ function AdminComplaints() {
 }
 
 export default AdminComplaints;
+

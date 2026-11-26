@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "https://lpu-campus-care.onrender.com/api/auth";
 
 function Register() {
   const navigate = useNavigate();
@@ -199,3 +199,4 @@ function Register() {
 }
 
 export default Register;
+

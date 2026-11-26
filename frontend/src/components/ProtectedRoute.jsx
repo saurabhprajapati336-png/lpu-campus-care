@@ -40,3 +40,4 @@ function ProtectedRoute({ allowedRole }) {
 }
 
 export default ProtectedRoute;
+

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./StudentDashboard.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://lpu-campus-care.onrender.com/api";
 
 function StudentDashboard() {
   const navigate = useNavigate();
@@ -336,3 +336,4 @@ function StudentDashboard() {
 }
 
 export default StudentDashboard;
+
